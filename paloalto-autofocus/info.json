@@ -1,0 +1,180 @@
+{
+  "name": "paloalto-autofocus",
+  "version": "1.0.0",
+  "label": "PaloAlto AutoFocus",
+  "description": "PaloAlto AutoFocus connector provide investigative actions like hunt IP, URL, Domain and File from AutoFocus",
+  "publisher": "CyberSponse Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Information",
+  "help_online": "https://help.cybersponse.com/support/solutions/articles/17000076589-paloalto-autofocus-v1-0-0",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "value": "autofocus.paloaltonetworks.com"
+      },
+      {
+        "title": "API Key",
+        "name": "api_key",
+        "type": "password",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "hunt_ip",
+      "category": "investigation",
+      "annotation": "hunt_ip",
+      "description": "Hunt an IP in AutoFocus",
+      "title": "Hunt IP",
+      "parameters": [
+        {
+          "title": "IP Address",
+          "name": "ip",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "output_schema": {
+        "total_tags_matched": "",
+        "url": "",
+        "tag_name": "",
+        "description": ""
+      },
+      "enabled": true
+    },
+    {
+      "operation": "hunt_url",
+      "category": "investigation",
+      "annotation": "hunt_url",
+      "description": "Hunt an URL and get list of associated tags from AutoFocus",
+      "title": "Hunt URL",
+      "parameters": [
+        {
+          "title": "URL",
+          "name": "url",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "output_schema": {
+        "total_tags_matched": "",
+        "url": "",
+        "tag_name": "",
+        "description": ""
+      },
+      "enabled": true
+    },
+    {
+      "operation": "hunt_domain",
+      "category": "investigation",
+      "annotation": "hunt_domain",
+      "description": "Hunt domain and get list of associated tags from AutoFocus",
+      "title": "Hunt Domain",
+      "parameters": [
+        {
+          "title": "Domain",
+          "name": "domain",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "output_schema": {
+        "total_tags_matched": "",
+        "url": "",
+        "tag_name": "",
+        "description": ""
+      },
+      "enabled": true
+    },
+    {
+      "operation": "hunt_file",
+      "category": "investigation",
+      "annotation": "hunt_file",
+      "description": "Hunt file hash and get list of associated tags from AutoFocus",
+      "title": "Hunt File",
+      "parameters": [
+        {
+          "title": "Filehash",
+          "name": "hash",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "output_schema": {
+        "total_tags_matched": "",
+        "url": "",
+        "tag_name": "",
+        "description": ""
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_report",
+      "category": "investigation",
+      "annotation": "get_report",
+      "description": "Get report using tag name from AutoFocus",
+      "title": "Get Report",
+      "parameters": [
+        {
+          "title": "AutoFocus Tag",
+          "name": "tag",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "output_schema": {
+        "count": "",
+        "lasthit": "",
+        "email": "",
+        "comment": "",
+        "user_id": "",
+        "customer": "",
+        "last_name": "",
+        "first_name": "",
+        "support_id": "",
+        "visibility": "",
+        "submit_time": "",
+        "comment_type": "",
+        "tag_comment_id": "",
+        "tag_name": "",
+        "description": "",
+        "tag_definition_scope": ""
+        },
+      "enabled": true
+    }
+  ]
+}
+
+
+
