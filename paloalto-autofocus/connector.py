@@ -1,19 +1,27 @@
-from connectors.core.connector import Connector
-from connectors.core.connector import get_logger, ConnectorError
-from .operations import operations, _check_health
+"""
+Copyright start
+MIT License
+Copyright (c) 2023 Fortinet Inc
+Copyright end
+"""
+
+from .operations import operations, check_health
+from connectors.core.connector import Connector, get_logger, ConnectorError
 
 logger = get_logger('paloalto-autofocus')
 
 
 class AutoFocus(Connector):
-    def execute(self, config, operation, operation_params, **kwargs):
+    def execute(self, config, operation, params, **kwargs):
         try:
-            operation = operations.get(operation)
-            return operation(config, operation_params)
+            action = operations.get(operation)
+            logger.info('Executing action {}'.format(action))
+            return action(config, params)
         except Exception as err:
-            logger.error('{}'.format(err))
-            raise ConnectorError('{}'.format(err))
+            logger.exception("An exception occurred [{}]".format(err))
+            raise ConnectorError("An exception occurred [{}]".format(err))
 
     def check_health(self, config):
-        return _check_health(config)
-
+        logger.info('starting health check')
+        check_health(config)
+        logger.info('completed health check no errors')

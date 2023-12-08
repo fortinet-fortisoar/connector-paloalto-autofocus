@@ -2,374 +2,821 @@
   "type": "workflow_collections",
   "data": [
     {
+      "uuid": "516a9410-13df-4698-9043-42ea1c633950",
       "@type": "WorkflowCollection",
-      "name": "Sample - PaloAlto AutoFocus - 1.0.0",
-      "description": "PaloAlto AutoFocus connector provide investigative actions like hunt IP, URL, Domain and URL from AutoFocus",
-      "visible": true,
-      "image": null,
       "workflows": [
         {
           "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Hunt IP",
-          "description": "Hunt an IP in AutoFocus",
-          "collection": "/api/3/workflow_collections/782c96b1-1ac0-4dca-828e-1098b746cd75",
-          "tag": "#PaloAlto AutoFocus",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/9a301859-e12e-4f8b-8f55-be172124407d",
+          "uuid": "77c75ca4-021f-4e2b-a974-8a7af16a6cce",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
           "steps": [
             {
+              "uuid": "ac609a2f-ee1d-49ac-b599-ca913350af44",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
+              "status": null,
               "arguments": {
-                "route": "f268dcf0-b601-468d-96d9-8d2d406f84fd",
-                "title": "PaloAlto AutoFocus: Hunt IP",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.request.data.records}}"
+                    "params": []
                   }
-                },
-                "singleRecordExecution": false
+                }
               },
-              "status": null,
               "left": "20",
               "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "9a301859-e12e-4f8b-8f55-be172124407d"
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
+              "uuid": "44b7e56c-d2b7-442b-95cf-a69d87201389",
               "@type": "WorkflowStep",
-              "name": "Hunt IP",
+              "name": "Get IP Reputation",
               "description": null,
+              "status": null,
               "arguments": {
                 "name": "PaloAlto AutoFocus",
+                "config": "",
                 "params": {
-                  "ip": "89.223.29.252"
+                  "indicatorValue": "",
+                  "includeTags": true
                 },
-                "version": "1.0.0",
+                "version": "2.0.0",
                 "connector": "paloalto-autofocus",
-                "operation": "hunt_ip",
-                "operationTitle": "Hunt IP",
-                "step_variables": []
+                "operation": "get_ip_reputation",
+                "operationTitle": "Get IP Reputation"
               },
-              "status": null,
-              "left": "204",
-              "top": "163",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "68f687f8-22f6-4789-8572-cb574e270137"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "uuid": "f67ec1f6-b372-4bbb-9a26-9aa0f0b9f4ec",
-              "name": "Start -> Hunt IP",
-              "label": null,
-              "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/68f687f8-22f6-4789-8572-cb574e270137",
-              "sourceStep": "/api/3/workflow_steps/9a301859-e12e-4f8b-8f55-be172124407d"
-            }
-          ],
-          "uuid": "d118d58b-0916-4755-a2c9-d76bd2da5303"
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Hunt URL",
-          "description": "Hunt an url and get list of associated tags from AutoFocus",
-          "collection": "/api/3/workflow_collections/782c96b1-1ac0-4dca-828e-1098b746cd75",
-          "tag": "#PaloAlto AutoFocus",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/684b7350-7e5e-4b29-aed0-2d54f9e3b328",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "5eebc887-5b74-4186-9a1b-c089583982ad",
-                "title": "PaloAlto AutoFocus: Hunt URL",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.request.data.records}}"
-                  }
-                },
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "684b7350-7e5e-4b29-aed0-2d54f9e3b328"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Hunt URL",
-              "description": null,
-              "arguments": {
-                "name": "PaloAlto AutoFocus",
-                "params": {
-                  "url": "http://www.free4u.co.za/someyua/Y1.html"
-                },
-                "version": "1.0.0",
-                "connector": "paloalto-autofocus",
-                "operation": "hunt_url",
-                "operationTitle": "Hunt URL",
-                "step_variables": []
-              },
-              "status": null,
-              "left": "219",
-              "top": "141",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "c54a03eb-12c2-46c5-a6f0-3fcb02859689"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "uuid": "34c5d1f0-48a3-4fba-9075-f58fe2cf1fc4",
-              "name": "Start -> Hunt URL",
-              "label": null,
-              "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/c54a03eb-12c2-46c5-a6f0-3fcb02859689",
-              "sourceStep": "/api/3/workflow_steps/684b7350-7e5e-4b29-aed0-2d54f9e3b328"
-            }
-          ],
-          "uuid": "ac04ca7f-42aa-4936-b61b-ed0623022dcd"
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Hunt Domain",
-          "description": "Hunt domain and get list of associated tags from AutoFocus",
-          "collection": "/api/3/workflow_collections/782c96b1-1ac0-4dca-828e-1098b746cd75",
-          "tag": "#PaloAlto AutoFocus",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/e88053d6-1aeb-4f10-adb0-ae9e34761eb7",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "f9b7301b-26dd-4878-8a28-f54b3d1ce733",
-                "title": "PaloAlto AutoFocus: Hunt Domain",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.request.data.records}}"
-                  }
-                },
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "e88053d6-1aeb-4f10-adb0-ae9e34761eb7"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Hunt Domain",
-              "description": null,
-              "arguments": {
-                "name": "PaloAlto AutoFocus",
-                "params": {
-                  "domain": "divyamayurvedic.com"
-                },
-                "version": "1.0.0",
-                "connector": "paloalto-autofocus",
-                "operation": "hunt_domain",
-                "operationTitle": "Hunt Domain",
-                "step_variables": []
-              },
-              "status": null,
-              "left": "191",
-              "top": "110",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "f8c4d20b-5720-4775-9fc2-da18d47d1480"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "uuid": "66f299cf-2a65-4c10-a625-b6cc0217de3c",
-              "name": "Start -> Hunt Domain",
-              "label": null,
-              "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/f8c4d20b-5720-4775-9fc2-da18d47d1480",
-              "sourceStep": "/api/3/workflow_steps/e88053d6-1aeb-4f10-adb0-ae9e34761eb7"
-            }
-          ],
-          "uuid": "bc8ac88f-c43b-4ce7-bbbf-c9d5140b9a74"
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Hunt File",
-          "description": "Hunt file and get list of associated tags from AutoFocus",
-          "collection": "/api/3/workflow_collections/782c96b1-1ac0-4dca-828e-1098b746cd75",
-          "tag": "#PaloAlto AutoFocus",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/9ed05d4e-23eb-4dd4-b838-08baa4bb2196",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "fd862c5b-6668-4f51-8c2d-183e66bc412d",
-                "title": "PaloAlto AutoFocus: Hunt File",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.request.data.records}}"
-                  }
-                },
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "9ed05d4e-23eb-4dd4-b838-08baa4bb2196"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Hunt File",
-              "description": null,
-              "arguments": {
-                "name": "PaloAlto AutoFocus",
-                "params": {
-                  "hash": "b4e1a8c364d44471981746a2c45e3301616be3bf"
-                },
-                "version": "1.0.0",
-                "connector": "paloalto-autofocus",
-                "operation": "hunt_file",
-                "operationTitle": "Hunt File",
-                "step_variables": []
-              },
-              "status": null,
-              "left": "200",
-              "top": "126",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "d590e6a3-7046-44ad-8db7-2d36daa8ac21"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "uuid": "cde8e052-f1e3-4f45-acd9-8c376b32bdc9",
-              "name": "Start -> Hunt File",
-              "label": null,
-              "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/d590e6a3-7046-44ad-8db7-2d36daa8ac21",
-              "sourceStep": "/api/3/workflow_steps/9ed05d4e-23eb-4dd4-b838-08baa4bb2196"
-            }
-          ],
-          "uuid": "b96958f5-f7c7-48ff-a017-35533bf826f7"
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Get Report",
-          "description": "Get report using tag name from AutoFocus",
-          "collection": "/api/3/workflow_collections/782c96b1-1ac0-4dca-828e-1098b746cd75",
-          "tag": "#PaloAlto AutoFocus",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/ad6788d9-3109-4cbc-996e-b699ec8c6068",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "9814e9f9-4db5-42f9-9dd8-0ed1c98eac4b",
-                "title": "PaloAlto AutoFocus: Get Report",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.request.data.records}}"
-                  }
-                },
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "ad6788d9-3109-4cbc-996e-b699ec8c6068"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Get Report",
-              "description": null,
-              "arguments": {
-                "name": "PaloAlto AutoFocus",
-                "params": {
-                  "tag": "tagname"
-                },
-                "version": "1.0.0",
-                "connector": "paloalto-autofocus",
-                "operation": "get_report",
-                "operationTitle": "Get Report",
-                "step_variables": []
-              },
-              "status": null,
-              "left": "207",
+              "left": "188",
               "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "ee558c73-10bc-441f-b07e-383137841a77"
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
             }
           ],
+          "triggerLimit": null,
+          "description": "Retrieves a report from Palo Alto AutoFocus for the IP address submitted to determine if it is suspicious based on the IP address you have specified.",
+          "name": "Get IP Reputation",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ac609a2f-ee1d-49ac-b599-ca913350af44",
           "routes": [
             {
+              "uuid": "ec50f116-3d8e-40be-aaf8-7cbbd8891b40",
               "@type": "WorkflowRoute",
-              "uuid": "2af26e20-2fc1-4814-938c-5de6138b3061",
-              "name": "Start -> Get Report",
               "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/ee558c73-10bc-441f-b07e-383137841a77",
-              "sourceStep": "/api/3/workflow_steps/ad6788d9-3109-4cbc-996e-b699ec8c6068"
+              "name": "Start-> Get IP Reputation",
+              "sourceStep": "/api/3/workflow_steps/ac609a2f-ee1d-49ac-b599-ca913350af44",
+              "targetStep": "/api/3/workflow_steps/44b7e56c-d2b7-442b-95cf-a69d87201389"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "79caaa73-e229-4364-b042-a45676647ca7",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "c8dbc105-3a01-4a17-b636-0922f228ade7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "207c257a-70e8-498c-9807-0765e2d3c7b7",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "indicatorValue": "",
+                  "includeTags": true
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "get_domain_reputation",
+                "operationTitle": "Get Domain Reputation"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
             }
           ],
-          "uuid": "36497b70-b148-4227-bc0f-0bd9eaf7bdb2"
+          "triggerLimit": null,
+          "description": "Retrieves a report from Palo Alto AutoFocus for the domain submitted to determine if it is suspicious based on the domain name you have specified.",
+          "name": "Get Domain Reputation",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c8dbc105-3a01-4a17-b636-0922f228ade7",
+          "routes": [
+            {
+              "uuid": "d77431f3-8f28-418a-946c-5af4033b49b6",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Reputation",
+              "sourceStep": "/api/3/workflow_steps/c8dbc105-3a01-4a17-b636-0922f228ade7",
+              "targetStep": "/api/3/workflow_steps/207c257a-70e8-498c-9807-0765e2d3c7b7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6ecd87a5-b112-4852-8805-c33171b03672",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "5309c2d7-7d70-4858-9216-63c1f78aa1c0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "f396538f-60e8-42d6-b9b3-67493fcd3893",
+              "@type": "WorkflowStep",
+              "name": "Get URL Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "indicatorValue": "",
+                  "includeTags": true
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "get_url_reputation",
+                "operationTitle": "Get URL Reputation"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a report from Palo Alto AutoFocus for the URL submitted to determine if it is suspicious based on the URL you have specified.",
+          "name": "Get URL Reputation",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5309c2d7-7d70-4858-9216-63c1f78aa1c0",
+          "routes": [
+            {
+              "uuid": "c33a75fa-4900-4678-97bb-a954d67e8295",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get URL Reputation",
+              "sourceStep": "/api/3/workflow_steps/5309c2d7-7d70-4858-9216-63c1f78aa1c0",
+              "targetStep": "/api/3/workflow_steps/f396538f-60e8-42d6-b9b3-67493fcd3893"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "cb225fbd-8e52-4f69-93f6-39ea67433429",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "1bcdde14-9248-4f63-847b-c734cb4d1ef6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "fa9716bf-de35-4e27-a001-b2314eb829be",
+              "@type": "WorkflowStep",
+              "name": "Get File Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "indicatorValue": "",
+                  "includeTags": true
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "get_file_reputation",
+                "operationTitle": "Get File Reputation"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a report from Palo Alto AutoFocus for the file that you have submitted to determine if it is suspicious based on the file hash value you have specified.",
+          "name": "Get File Reputation",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1bcdde14-9248-4f63-847b-c734cb4d1ef6",
+          "routes": [
+            {
+              "uuid": "8f7f7b12-2e2d-49d2-930c-ef0b867aac79",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get File Reputation",
+              "sourceStep": "/api/3/workflow_steps/1bcdde14-9248-4f63-847b-c734cb4d1ef6",
+              "targetStep": "/api/3/workflow_steps/fa9716bf-de35-4e27-a001-b2314eb829be"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "31f3228d-b04a-4c5c-928b-40e3f097fc13",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "ce48738e-94a9-4093-9a66-f07ef8a18e99",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "8260bb8b-d238-482e-9542-70cd2ac0439b",
+              "@type": "WorkflowStep",
+              "name": "Get Threat Indicator Feed",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "get_threat_indicator_feed",
+                "operationTitle": "Get Threat Indicator Feed"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a complete, unsorted list of threat indicators that have been added in the past 24 hours in Palo Alto AutoFocus.",
+          "name": "Get Threat Indicator Feed",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ce48738e-94a9-4093-9a66-f07ef8a18e99",
+          "routes": [
+            {
+              "uuid": "8e0891c5-6799-4ffc-aa73-891c0008030a",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Threat Indicator Feed",
+              "sourceStep": "/api/3/workflow_steps/ce48738e-94a9-4093-9a66-f07ef8a18e99",
+              "targetStep": "/api/3/workflow_steps/8260bb8b-d238-482e-9542-70cd2ac0439b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "df41b071-fe17-47d4-bfe2-cb374b877a8c",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "fb5c2a0b-e8b5-43c3-a79e-3ed6b19f3042",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "194a2553-71b4-4514-ab21-4597fbe405b2",
+              "@type": "WorkflowStep",
+              "name": "Samples Searches",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "scope": "Private",
+                  "query": [
+                    {
+                      "field": "session.src_country",
+                      "operator": "is",
+                      "value": "India"
+                    }
+                  ],
+                  "operator": "",
+                  "sort_field": "",
+                  "sort_order": "",
+                  "size": 50,
+                  "from": "",
+                  "type": ""
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "samples_search",
+                "operationTitle": "Samples Searches"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Searches for the samples that WildFire has determined are malware.",
+          "name": "Samples Searches",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/fb5c2a0b-e8b5-43c3-a79e-3ed6b19f3042",
+          "routes": [
+            {
+              "uuid": "b34a252e-6da3-49e9-8d99-4362a354c8a8",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Samples Searches",
+              "sourceStep": "/api/3/workflow_steps/fb5c2a0b-e8b5-43c3-a79e-3ed6b19f3042",
+              "targetStep": "/api/3/workflow_steps/194a2553-71b4-4514-ab21-4597fbe405b2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0970cb90-6142-4122-8a10-80e0dd9247aa",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "d26c3af2-a40a-468b-940d-89d52acd312b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "cf199c1c-7b5f-4193-84ce-615de520ffc7",
+              "@type": "WorkflowStep",
+              "name": "Get Sample Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "public_tag_name": ""
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "get_sample_details",
+                "operationTitle": "Get Sample Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves details on a specific samples on the Palo Alto AutoFocus.",
+          "name": "Get Sample Details",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d26c3af2-a40a-468b-940d-89d52acd312b",
+          "routes": [
+            {
+              "uuid": "a098c3f4-b991-4772-bbf0-64b610bf5774",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Sample Details",
+              "sourceStep": "/api/3/workflow_steps/d26c3af2-a40a-468b-940d-89d52acd312b",
+              "targetStep": "/api/3/workflow_steps/cf199c1c-7b5f-4193-84ce-615de520ffc7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9ea63cc4-155e-4133-b082-9f27e2794a80",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "2d3fc51a-c384-4898-a3aa-25e6d882d0ab",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "d364ca9d-ee15-471f-a08d-c8d1fc026aca",
+              "@type": "WorkflowStep",
+              "name": "Top Tags Search",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "scope": "All",
+                  "query": [
+                    {
+                      "field": "sample.malware",
+                      "operator": "is",
+                      "value": 1
+                    }
+                  ],
+                  "operator": "",
+                  "tagScopes": "Private",
+                  "size": 50
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "top_tags_search",
+                "operationTitle": "Top Tags Search"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Searches for the Top Tags data available when you view search statistics.",
+          "name": "Top Tags Search",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2d3fc51a-c384-4898-a3aa-25e6d882d0ab",
+          "routes": [
+            {
+              "uuid": "ef0806c4-7ba4-4d69-a851-f018ce4bb218",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Top Tags Search",
+              "sourceStep": "/api/3/workflow_steps/2d3fc51a-c384-4898-a3aa-25e6d882d0ab",
+              "targetStep": "/api/3/workflow_steps/d364ca9d-ee15-471f-a08d-c8d1fc026aca"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "667732fc-b45b-4154-aeb4-5e1db3ecd8a5",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "80dd182c-447e-4803-a4e9-23d685f59ab3",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "a9fc2ee7-84c2-4ab0-8a50-59bd2a81949f",
+              "@type": "WorkflowStep",
+              "name": "Get Tags List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "scope": "Visible",
+                  "query": {
+                    "field": "tag_name",
+                    "operator": "contains",
+                    "value": "4h"
+                  },
+                  "sortBy": "Name",
+                  "order": "Ascending",
+                  "pageSize": 50,
+                  "pageNum": ""
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "get_tags_list",
+                "operationTitle": "Get Tags List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of tags from Palo Alto AutoFocus based on the input parameters that you have specified.",
+          "name": "Get Tags List",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/80dd182c-447e-4803-a4e9-23d685f59ab3",
+          "routes": [
+            {
+              "uuid": "872af3a4-40ce-4f98-abf9-ce9451c3f6f3",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Tags List",
+              "sourceStep": "/api/3/workflow_steps/80dd182c-447e-4803-a4e9-23d685f59ab3",
+              "targetStep": "/api/3/workflow_steps/a9fc2ee7-84c2-4ab0-8a50-59bd2a81949f"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "86241fe9-40ae-4485-a555-0a388731df51",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "6ad6b472-fc1f-4aed-abeb-49cbccb33a44",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "4776f185-069c-4c45-886b-f841945d3799",
+              "@type": "WorkflowStep",
+              "name": "Get Tag Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "public_tag_name": ""
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "get_tag_details",
+                "operationTitle": "Get Tag Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves details on a specific public tag listed on the Palo Alto AutoFocus.",
+          "name": "Get Tag Details",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/6ad6b472-fc1f-4aed-abeb-49cbccb33a44",
+          "routes": [
+            {
+              "uuid": "2e23424a-7fa1-4107-bd04-ac7359da5ebb",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Tag Details",
+              "sourceStep": "/api/3/workflow_steps/6ad6b472-fc1f-4aed-abeb-49cbccb33a44",
+              "targetStep": "/api/3/workflow_steps/4776f185-069c-4c45-886b-f841945d3799"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4370c291-427f-4d11-b287-95e70141d651",
+          "collection": "/api/3/workflow_collections/516a9410-13df-4698-9043-42ea1c633950",
+          "steps": [
+            {
+              "uuid": "52be4380-3519-40a0-8fbb-c5616305f0c7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "9f3ecee4-413f-47e8-855a-4fe5278fd482",
+              "@type": "WorkflowStep",
+              "name": "Get Session Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "PaloAlto AutoFocus",
+                "config": "",
+                "params": {
+                  "session_id": ""
+                },
+                "version": "2.0.0",
+                "connector": "paloalto-autofocus",
+                "operation": "get_session_details",
+                "operationTitle": "Get Session Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves details about a specific session, such as application, filename, source country, and device model from Palo Alto AutoFocus.",
+          "name": "Get Session Details",
+          "tag": "#PaloAlto AutoFocus",
+          "recordTags": [
+            "PaloAlto",
+            "paloalto-autofocus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/52be4380-3519-40a0-8fbb-c5616305f0c7",
+          "routes": [
+            {
+              "uuid": "af8fa9f5-a35a-4589-a362-527833cf0644",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Session Details",
+              "sourceStep": "/api/3/workflow_steps/52be4380-3519-40a0-8fbb-c5616305f0c7",
+              "targetStep": "/api/3/workflow_steps/9f3ecee4-413f-47e8-855a-4fe5278fd482"
+            }
+          ]
         }
       ],
-      "uuid": "782c96b1-1ac0-4dca-828e-1098b746cd75"
+      "name": "Sample - PaloAlto AutoFocus - 2.0.0",
+      "description": "Palo Alto Networks AutoFocus\u2122 is a threat intelligence service that provides an interactive, graphical interface for analyzing and contextualizing the threats your network faces.",
+      "visible": true,
+      "recordTags": [
+        "PaloAlto",
+        "paloalto-autofocus"
+      ]
     }
   ]
 }
