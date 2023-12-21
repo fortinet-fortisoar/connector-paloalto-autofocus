@@ -6,7 +6,7 @@
   "publisher": "Fortinet",
   "cs_approved": false,
   "cs_compatible": true,
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/2.0.0/paloalto-autofocus/751/paloalto-autofocus-v2-0-0",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Threat Intelligence",
@@ -25,24 +25,24 @@
       },
       {
         "title": "API Key",
-        "description": "Specify the API key to access the endpoint to which you will connect and perform the automated operations",
+        "description": "Specify the API key to access the endpoint to connect and perform the automated operations",
         "required": true,
         "editable": true,
         "visible": true,
         "type": "password",
         "name": "api_key",
-        "tooltip": "Specify the API key to access the endpoint to which you will connect and perform the automated operations"
+        "tooltip": "Specify the API key to access the endpoint to connect and perform the automated operations"
       },
       {
         "title": "Verify SSL",
-        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e. set to True.",
         "name": "verify_ssl",
         "type": "checkbox",
         "required": false,
         "editable": true,
         "visible": true,
         "value": true,
-        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e. set to True."
       }
     ]
   },
@@ -50,7 +50,7 @@
     {
       "operation": "get_ip_reputation",
       "title": "Get IP Reputation",
-      "description": "Retrieves a report from Palo Alto AutoFocus for the IP address submitted to determine if it is suspicious based on the IP address you have specified.",
+      "description": "Retrieves a report, to determine if an IP address is suspicious, from Palo Alto AutoFocus based on the IP address you have specified.",
       "category": "investigation",
       "annotation": "get_ip_reputation",
       "output_schema": {},
@@ -58,55 +58,55 @@
       "parameters": [
         {
           "title": "IP Address",
-          "description": "Specify the IP address for which you want to retrieve a Palo Alto AutoFocus report.",
+          "description": "Specify the IP address for which to retrieve a Palo Alto AutoFocus report.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "indicatorValue",
-          "tooltip": "Specify the IP address for which you want to retrieve a Palo Alto AutoFocus report."
+          "tooltip": "Specify the IP address for which to retrieve a Palo Alto AutoFocus report."
         },
         {
           "title": "Include Tags",
-          "description": "Select the option to include or exclude AutoFocus tags. By default, this is set as True.",
+          "description": "Select the option to include or exclude AutoFocus tags. By default, this is selected, i.e., set to True.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "includeTags",
           "value": true,
-          "tooltip": "Select the option to include or exclude AutoFocus tags. By default, this is set as True."
+          "tooltip": "Select the option to include or exclude AutoFocus tags. By default, this is selected, i.e., set to True."
         }
       ]
     },
     {
       "operation": "get_domain_reputation",
       "title": "Get Domain Reputation",
-      "description": "Retrieves a report from Palo Alto AutoFocus for the domain submitted to determine if it is suspicious based on the domain name you have specified.",
+      "description": "Retrieves a report, to determine if a domain is suspicious, from Palo Alto AutoFocus based on the domain you have specified.",
       "category": "investigation",
       "annotation": "get_domain_reputation",
       "enabled": true,
       "parameters": [
         {
           "title": "Domain",
-          "description": "Specify the domain name for which you want to retrieve a Palo Alto AutoFocus report.",
+          "description": "Specify the domain name for which to retrieve the Palo Alto AutoFocus report.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "indicatorValue",
-          "tooltip": "Specify the domain name for which you want to retrieve a Palo Alto AutoFocus report."
+          "tooltip": "Specify the domain name for which to retrieve the Palo Alto AutoFocus report."
         },
         {
           "title": "Include Tags",
-          "description": "Select the option to include or exclude AutoFocus tags. By default, this is set as True.",
+          "description": "Select the option to include or exclude AutoFocus tags. By default, this is selected, i.e., set to True.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "includeTags",
           "value": true,
-          "tooltip": "Select the option to include or exclude AutoFocus tags. By default, this is set as True."
+          "tooltip": "Select the option to include or exclude AutoFocus tags. By default, this is selected, i.e., set to True."
         }
       ],
       "output_schema": {
@@ -165,7 +165,7 @@
     {
       "operation": "get_url_reputation",
       "title": "Get URL Reputation",
-      "description": "Retrieves a report from Palo Alto AutoFocus for the URL submitted to determine if it is suspicious based on the URL you have specified.",
+      "description": "Retrieves a report, to determine if a URL is suspicious, from Palo Alto AutoFocus based on the URL you have specified.",
       "category": "investigation",
       "annotation": "get_url_reputation",
       "output_schema": {},
@@ -173,31 +173,31 @@
       "parameters": [
         {
           "title": "URL",
-          "description": "Specify the URL for which you want to retrieve a Palo Alto AutoFocus report.",
+          "description": "Specify the URL for which to retrieve a Palo Alto AutoFocus report.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "indicatorValue",
-          "tooltip": "Specify the URL for which you want to retrieve a Palo Alto AutoFocus report."
+          "tooltip": "Specify the URL for which to retrieve a Palo Alto AutoFocus report."
         },
         {
           "title": "Include Tags",
-          "description": "Select the option to include or exclude AutoFocus tags. By default, this is set as True.",
+          "description": "Select the option to include or exclude AutoFocus tags. By default, this is selected, i.e., set to True.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "includeTags",
           "value": true,
-          "tooltip": "Select the option to include or exclude AutoFocus tags. By default, this is set as True."
+          "tooltip": "Select the option to include or exclude AutoFocus tags. By default, this is selected, i.e., set to True."
         }
       ]
     },
     {
       "operation": "get_file_reputation",
       "title": "Get File Reputation",
-      "description": "Retrieves a report from Palo Alto AutoFocus for the file that you have submitted to determine if it is suspicious based on the file hash value you have specified.",
+      "description": "Retrieves a report, to determine if a file is suspicious, from Palo Alto AutoFocus based on the file hash value you have specified.",
       "category": "investigation",
       "annotation": "get_file_reputation",
       "output_schema": {},
@@ -205,24 +205,24 @@
       "parameters": [
         {
           "title": "File Hash",
-          "description": "Specify the File Hash of the file for which you want to retrieve a Palo Alto AutoFocus report.",
+          "description": "Specify the File Hash of the file for which to retrieve a Palo Alto AutoFocus report.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "indicatorValue",
-          "tooltip": "Specify the File Hash of the file for which you want to retrieve a Palo Alto AutoFocus report."
+          "tooltip": "Specify the File Hash of the file for which to retrieve a Palo Alto AutoFocus report."
         },
         {
           "title": "Include Tags",
-          "description": "Select the option to include or exclude AutoFocus tags. By default, this is set as True.",
+          "description": "Select the option to include or exclude AutoFocus tags. By default, this is selected, i.e., set to True.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "includeTags",
           "value": true,
-          "tooltip": "Select the option to include or exclude AutoFocus tags. By default, this is set as True."
+          "tooltip": "Select the option to include or exclude AutoFocus tags. By default, this is selected, i.e., set to True."
         }
       ]
     },
@@ -251,18 +251,18 @@
           "visible": true,
           "type": "select",
           "name": "scope",
-          "description": "Select the scope of the search based on which you want to retrieve list of sample searches from Palo Alto AutoFocus. You can choose from the following options: Private (default), Public, or Global.",
+          "description": "Select the scope of the search based on which to retrieve the list of sample searches from Palo Alto AutoFocus. You can choose from the following options: Private, Public, or Global. Private is selected by default.",
           "options": [
             "Private",
             "Public",
             "Global"
           ],
           "value": "Private",
-          "tooltip": "Select the scope of the search based on which you want to retrieve list of sample searches from Palo Alto AutoFocus. You can choose from the following options: Private (default), Public, or Global."
+          "tooltip": "Select the scope of the search based on which to retrieve the list of sample searches from Palo Alto AutoFocus. You can choose from the following options: Private, Public, or Global. Private is selected by default."
         },
         {
           "title": "Filter Query",
-          "description": "Filter the results based on the conditions specified within this object.",
+          "description": "Specify the conditions to filter the results within this object.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -275,11 +275,11 @@
               "value": "India"
             }
           ],
-          "tooltip": "Filter the results based on the conditions specified within this object."
+          "tooltip": "Specify the conditions to filter the results within this object."
         },
         {
           "title": "Operator",
-          "description": "If you want more than one search or child search condition, you must specify an additional operator parameter to specify whether to match all or any of the search conditions. Possible values are: All or Any.",
+          "description": "Select to match all or any of the search conditions. To retrieve more than one search or child search conditions, you must specify an additional operator parameter. You can choose from following options: All or Any.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -289,11 +289,11 @@
             "All",
             "Any"
           ],
-          "tooltip": "If you want more than one search or child search condition, you must specify an additional operator parameter to specify whether to match all or any of the search conditions. Possible values are: All or Any."
+          "tooltip": "Select to match all or any of the search conditions. To retrieve more than one search or child search conditions, you must specify an additional operator parameter. You can choose from following options: All or Any."
         },
         {
           "title": "Sort By",
-          "description": "Select the name of the field based on which you want to sort the result (samples) retrieved by this operation. You can choose from the following values: App Name, App Package Name, FileType, Size, Finish Date, etc.",
+          "description": "Select the name of the field based on which to sort the result (samples) retrieved by this operation. You can choose from the following options: App Name, App Package Name, FileType, Size, Finish Date, Create Date, Update Date, MD5, SHA1, SHA256, or SSDeep.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -312,11 +312,11 @@
             "SHA256",
             "SSDeep"
           ],
-          "tooltip": "Field to sort by: App Name, App Package Name, FileType, Size, Finish Date, etc."
+          "tooltip": "Select the name of the field based on which to sort the result (samples) retrieved by this operation. You can choose from the following options: App Name, App Package Name, FileType, Size, Finish Date, Create Date, Update Date, MD5, SHA1, SHA256, or SSDeep."
         },
         {
           "title": "Sort Order",
-          "description": "Select the sorting order of the result. You can choose between Ascending or Descending. Note: Use only when \"Sort By\" parameter is provided.",
+          "description": "Select the sorting order of the results. You can choose from following options: Ascending or Descending. NOTE: Use only when Sort By parameter is provided.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -326,7 +326,7 @@
             "Ascending",
             "Descending"
           ],
-          "tooltip": "Direction of sort: Ascending, Descending. Note: Use only when \"Sort By\" parameter is provided."
+          "tooltip": "Select the sorting order of the results. You can choose from following options: Ascending or Descending. NOTE: Use only when Sort By parameter is provided."
         },
         {
           "title": "Page Size",
@@ -337,22 +337,22 @@
           "type": "integer",
           "name": "size",
           "value": 50,
-          "tooltip": "Specify the maximum count of records that you want this operation to fetch from Palo Alto AutoFocus. By default, this option is set as 50 and maximum we can set as 4000."
+          "tooltip": "Specify the maximum count of records that you want this operation to fetch from Palo Alto AutoFocus. By default, this option is set to 50, and you can set a maximum value of 4000."
         },
         {
           "title": "Page Number",
-          "description": "Specify the page from which you want this operation to return results based on the page size. By default, this option is set as '0'. For example, if you set this as '2' and retain the page size as 100, then the operation will return 100 results from the 2nd page.",
+          "description": "Specify the page from which to return results based on the page size. By default, this option is set to 0. For example, if you set this as 2 and retain the page size as 100, then the operation returns 100 results from the 2nd page.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "from",
           "value": 0,
-          "tooltip": "The page to offset from based on the Page Size. By default, this option is set as 0"
+          "tooltip": "Specify the page from which to return results based on the page size. By default, this option is set to 0. For example, if you set this as 2 and retain the page size as 100, then the operation returns 100 results from the 2nd page."
         },
         {
           "title": "Type",
-          "description": "If you set type to scan, you can get up to 200,000 search results through pagination. Each time you view results, AutoFocus responds with the next page of results until the search is complete. By default, a page displays 50 results, and you can use the \"Page Size\" parameter to set the number of results on each page. The \"Scan\" value is currently the only possible value. For type=scan, the \"Page Number\", \"Sort By\" and \"Sort Order\" parameters are not available.",
+          "description": "Select Scan to view paginated results without setting Sort By, Sort Order, and Page Number. Each time you view results, AutoFocus responds with the next page of results until the search is complete. By default, a page displays 50 results, and you can use the Page Size parameter to set the number of results on each page. NOTE: Do not specify the Sort By, Sort Order, and Page Number parameters when Scan is selected.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -380,20 +380,20 @@
     {
       "operation": "get_sample_details",
       "title": "Get Sample Details",
-      "description": "Retrieves details on a specific samples on the Palo Alto AutoFocus.",
+      "description": "Retrieves details of a specific sample from Palo Alto AutoFocus.",
       "category": "investigation",
       "annotation": "get_sample_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Public Tag Name",
-          "description": "Specify the name of the public tag for which you want to retrieve details from Palo Alto AutoFocus. Note: The public tag name is visible in the response of \"Get Tags List\" operation.",
+          "description": "Specify the name of the public tag for which to retrieve details from Palo Alto AutoFocus. NOTE: The public tag name is visible in the response of Get Tags List operation.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "public_tag_name",
-          "tooltip": "Specify the name of the public tag for which you want to retrieve details from Palo Alto AutoFocus. Note: The public tag name is visible in the response of \"Get Tags List\" operation."
+          "tooltip": "Specify the name of the public tag for which to retrieve details from Palo Alto AutoFocus. NOTE: The public tag name is visible in the response of Get Tags List operation."
         }
       ],
       "output_schema": {
@@ -436,7 +436,7 @@
     {
       "operation": "top_tags_search",
       "title": "Top Tags Search",
-      "description": "Searches for the Top Tags data available when you view search statistics.",
+      "description": "Searches for the top tags data available when you view search statistics.",
       "category": "investigation",
       "annotation": "top_tags_search",
       "enabled": true,
@@ -448,7 +448,7 @@
           "visible": true,
           "type": "select",
           "name": "scope",
-          "description": "Select the scope of the search based on which you want to retrieve list of top tags from Palo Alto AutoFocus. You can choose from the following options: All (default), Industry ,Organization, or Global.",
+          "description": "Select the scope of the search based on which to retrieve the list of top tags from Palo Alto AutoFocus. You can choose from the following options: All, Industry ,Organization, or Global. All is selected by default.",
           "options": [
             "All",
             "Industry",
@@ -456,11 +456,11 @@
             "Global"
           ],
           "value": "All",
-          "tooltip": "Select the scope of the search based on which you want to retrieve list of top tags from Palo Alto AutoFocus. You can choose from the following options: All (default), Industry ,Organization, or Global."
+          "tooltip": "Select the scope of the search based on which to retrieve the list of top tags from Palo Alto AutoFocus. You can choose from the following options: All, Industry ,Organization, or Global. All is selected by default."
         },
         {
           "title": "Filter Query",
-          "description": "Filter the results based on the conditions specified within this object.",
+          "description": "Specify the conditions to filter the results within this object.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -473,11 +473,11 @@
               "value": 1
             }
           ],
-          "tooltip": "Filter the results based on the conditions specified within this object."
+          "tooltip": "Specify the conditions to filter the results within this object."
         },
         {
           "title": "Operator",
-          "description": "If you want more than one search or child search condition, you must specify an additional operator parameter to specify whether to match all or any of the search conditions. Possible values are: All or Any.",
+          "description": "Select to match all or any of the search conditions. To retrieve more than one search or child search conditions, you must specify an additional operator parameter. You can choose from following options: All or Any.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -487,11 +487,11 @@
             "All",
             "Any"
           ],
-          "tooltip": "If you want more than one search or child search condition, you must specify an additional operator parameter to specify whether to match all or any of the search conditions. Possible values are: All or Any."
+          "tooltip": "Select to match all or any of the search conditions. To retrieve more than one search or child search conditions, you must specify an additional operator parameter. You can choose from following options: All or Any."
         },
         {
           "title": "Tag Scopes",
-          "description": "Select the one or more tag scopes that you want to filter based on the type of malware. You can choose from the following options: Private (default), Public, Commodity and Unit42.",
+          "description": "Select the one or more tag scopes that you want to filter based on the type of malware. You can choose from the following options: Private, Public, Commodity and Unit42. Private is selected by default.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -504,7 +504,7 @@
             "Commodity",
             "Unit42"
           ],
-          "tooltip": "Select the one or more tag scopes that you want to filter based on the type of malware. You can choose from the following options: Private (default), Public, Commodity and Unit42."
+          "tooltip": "Select the one or more tag scopes that you want to filter based on the type of malware. You can choose from the following options: Private, Public, Commodity and Unit42. Private is selected by default."
         },
         {
           "title": "Page Size",
@@ -515,7 +515,7 @@
           "type": "integer",
           "name": "size",
           "value": 50,
-          "tooltip": "Specify the maximum count of records that you want this operation to fetch from Palo Alto AutoFocus. By default, this option is set as 50 and maximum we can set as 1000."
+          "tooltip": "Specify the maximum count of records that you want this operation to fetch from Palo Alto AutoFocus. By default, this option is set to 50, and you can set a maximum value of 1000."
         }
       ],
       "output_schema": {
@@ -537,7 +537,7 @@
     {
       "operation": "get_tags_list",
       "title": "Get Tags List",
-      "description": "Retrieves a list of tags from Palo Alto AutoFocus based on the input parameters that you have specified.",
+      "description": "Retrieves a list of tags from Palo Alto AutoFocus based on the scope, filter query, and other filter criteria that you have specified.",
       "category": "investigation",
       "annotation": "get_tags_list",
       "enabled": true,
@@ -549,7 +549,7 @@
           "visible": true,
           "type": "select",
           "name": "scope",
-          "description": "Select the scope of the search based on which you want to retrieve list of tags details from Palo Alto AutoFocus. You can choose from the following options: Visible (default), Private, Mine, Public, Unit42, or Commodity.",
+          "description": "Select the scope of the search based on which to retrieve list of tags details from Palo Alto AutoFocus. You can choose from the following options: Visible, Private, Mine, Public, Unit42, or Commodity. Visible is selected by default.",
           "options": [
             "Visible",
             "Private",
@@ -559,7 +559,7 @@
             "Commodity"
           ],
           "value": "Visible",
-          "tooltip": "Select the scope of the search based on which you want to retrieve list of tags details from Palo Alto AutoFocus. You can choose from the following options: Visible (default), Private, Mine, Public, Unit42, or Commodity."
+          "tooltip": "Select the scope of the search based on which to retrieve list of tags details from Palo Alto AutoFocus. You can choose from the following options: Visible, Private, Mine, Public, Unit42, or Commodity. Visible is selected by default."
         },
         {
           "title": "Filter Query",
@@ -574,11 +574,11 @@
             "operator": "contains",
             "value": "4h"
           },
-          "tooltip": "Filter the results based on the specified tag conditions and values."
+          "tooltip": "Filter the results based on the specified tag conditions and values.."
         },
         {
           "title": "Sort By",
-          "description": "Select the name of the field based on which you want to sort the result (tags) retrieved by this operation. You can choose from the following values: Name (default), Status, Count, Last Hit, or UpVotes.",
+          "description": "Select the name of the field based on which to sort the results retrieved by this operation. You can choose from the following options: Name, Status, Count, Last Hit, or UpVotes. Name is selected by default.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -596,7 +596,7 @@
         },
         {
           "title": "Sort Order",
-          "description": "Select the sorting order of the result. You can choose between Ascending (default) or Descending.",
+          "description": "Select the sorting order of the results. You can choose from following options: Ascending or Descending. By default, this option is set as Ascending. NOTE: Use only when Sort By parameter is provided.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -607,7 +607,7 @@
             "Descending"
           ],
           "value": "Ascending",
-          "tooltip": "Direction of sort: Ascending, Descending. By default, this option is set as Ascending."
+          "tooltip": "Select the sorting order of the results. You can choose from following options: Ascending or Descending. By default, this option is set as Ascending. NOTE: Use only when Sort By parameter is provided."
         },
         {
           "title": "Page Size",
@@ -618,18 +618,18 @@
           "type": "integer",
           "name": "pageSize",
           "value": 50,
-          "tooltip": "Specify the maximum count of records that you want this operation to fetch from Palo Alto AutoFocus. By default, this option is set as 50 and maximum we can set as 200."
+          "tooltip": "Specify the maximum count of records that you want this operation to fetch from Palo Alto AutoFocus. By default, this option is set to 50, and you can set a maximum value of 200."
         },
         {
           "title": "Page Number",
-          "description": "Specify the page from which you want this operation to return results based on the page size. By default, this option is set as '0'. For example, if you set this as '2' and retain the page size as 100, then the operation will return 100 results from the 2nd page.",
+          "description": "Specify the page from which to return results based on the page size. By default, this option is set to 0. For example, if you set this as 2 and retain the page size as 100, then the operation returns 100 results from the 2nd page.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "pageNum",
           "value": 0,
-          "tooltip": "The page to offset from based on the Page Size. By default, this option is set as 0"
+          "tooltip": "Specify the page from which to return results based on the page size. By default, this option is set to 0. For example, if you set this as 2 and retain the page size as 100, then the operation returns 100 results from the 2nd page."
         }
       ],
       "output_schema": {
@@ -667,20 +667,20 @@
     {
       "operation": "get_tag_details",
       "title": "Get Tag Details",
-      "description": "Retrieves details on a specific public tag listed on the Palo Alto AutoFocus.",
+      "description": "Retrieves details on a specific public tag listed on Palo Alto AutoFocus.",
       "category": "investigation",
       "annotation": "get_tag_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Public Tag Name",
-          "description": "Specify the name of the public tag for which you want to retrieve details from Palo Alto AutoFocus. Note: The public tag name is visible in the response of \"Get Tags List\" operation.",
+          "description": "Specify the name of the public tag for which to retrieve details from Palo Alto AutoFocus. NOTE: The public tag name is visible in the response of Get Tags List operation.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "public_tag_name",
-          "tooltip": "Specify the name of the public tag for which you want to retrieve details from Palo Alto AutoFocus. Note: The public tag name is visible in the response of \"Get Tags List\" operation."
+          "tooltip": "Specify the name of the public tag for which to retrieve details from Palo Alto AutoFocus. NOTE: The public tag name is visible in the response of Get Tags List operation."
         }
       ],
       "output_schema": {
@@ -734,13 +734,13 @@
       "parameters": [
         {
           "title": "Session ID",
-          "description": "Specify the ID of the session for which you want to retrieve details from Palo Alto AutoFocus. Note: The session ID (_id) is visible in the response of \"Get Sample Details\" operation.",
+          "description": "Specify the ID of the session for which to retrieve details from Palo Alto AutoFocus. NOTE: The session ID (_id) is visible in the response of Get Sample Details operation.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "session_id",
-          "tooltip": "Specify the ID of the session for which you want to retrieve details from Palo Alto AutoFocus. Note: The session ID (_id) is visible in the response of \"Get Sample Details\" operation."
+          "tooltip": "Specify the ID of the session for which to retrieve details from Palo Alto AutoFocus. NOTE: The session ID (_id) is visible in the response of Get Sample Details operation."
         }
       ],
       "output_schema": {
